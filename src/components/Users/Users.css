@@ -1,0 +1,65 @@
+
+
+.profileImg {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s ease;
+}
+
+.cursorBox {
+    cursor: pointer;
+}
+
+.profileImg:hover {
+    transform: scale(1.2);
+}
+
+.onlineDot {
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+    gap: 10px;
+    margin: 5px 0 5px 0;
+}
+
+.userInfoBox {
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+    gap: 5px;
+    border-bottom: 1px solid black;
+}
+
+.msgBtn {
+    border: 0;
+    border-radius: 4px;
+    margin-left: auto;
+}
+
+.msgBtn:hover {
+    background-color: none;
+    border: 1px solid rgb(17, 205, 17);
+}
+
+.name {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.status {
+    color: rgb(16, 201, 16);
+}
+
+.statusOff {
+    color: none;
+}
+
+.delBtn {
+    border: 0;
+    border-radius: 8px;
+    background-color: red;
+    margin-left: 10px;
+    padding: 5px 5px;
+}

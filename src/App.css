@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+
+:root {
+    --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+    --buttonBg: linear-gradient(98.63deg, #25cff9 0%, #0ca3c9 50%, #0d3fac 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  
+.headingTop {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+.authForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    gap: 1rem;
 }
-
-.App-link {
-  color: #61dafb;
+  
+.authInput {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  
+.authBtn {
+    padding: 0.75rem;
+    border: 1px solid rgb(51, 98, 227);
+    border-radius: 4px;
+    color: rgb(51, 98, 227);
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    background-color: white;
+    transition: 0.3s ease;
+}
+  
+.authBtn:hover {
+    background-image: var(--buttonBg);
+    color: white;
+}
+  
+.auth-span {
+    margin-top: 1rem;
+    color: #007bff;
+    cursor: pointer;
+    text-align: center;
+}
+  
+.auth-span:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }

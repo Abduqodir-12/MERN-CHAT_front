@@ -1,0 +1,64 @@
+
+
+.searchUser {
+    background-color: white;
+    border-radius: 10px;
+    max-width: 400px;
+    padding: 10px 20px;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.searchInputBox {
+    position: relative;
+}
+
+.searchInput {
+    padding: 10px;
+    background-color: #e6e1e1;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    width: 320px;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    border-radius: 8px;
+    color: white;
+    background-image: var(--buttonBg);
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.searchUser h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+}
+
+.logoApp {
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logoApp:hover {
+    transform: scale(1.2);
+}
+
+.searchIcon {
+    transition: 0.3s ease;
+}
+.searchIcon:hover {
+    transform: scale(1.1);
+}
