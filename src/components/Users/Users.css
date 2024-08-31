@@ -63,3 +63,33 @@
     margin-left: 10px;
     padding: 5px 5px;
 }
+
+@media (max-width: 768px) {
+    .profileImg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .onlineDot, .userInfoBox {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .msgBtn, .delBtn {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+
+    .delBtn {
+        margin-left: 5px;
+    }
+
+    .status {
+        font-size: 14px;
+    }
+}

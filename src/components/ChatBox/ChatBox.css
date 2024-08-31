@@ -100,3 +100,41 @@
     display: block; 
     margin: 10px auto; 
 }
+
+@media (max-width: 768px) {
+    .right-message-item, .left-message-item {
+        width: 90%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .right-message-item {
+        margin-left: 0;
+    }
+
+    .left-message-item {
+        margin-right: 0;
+    }
+
+    .profileImage {
+        width: 40px;
+        height: 40px;
+    }
+
+    .textMessageRight, .textMessageLeft {
+        font-size: 14px;
+    }
+
+    .messageTime {
+        font-size: 8px;
+    }
+
+    .chatBody {
+        height: 60vh;
+    }
+
+    .senderFileBtn {
+        padding: 8px 12px;
+        font-size: 18px;
+    }
+}

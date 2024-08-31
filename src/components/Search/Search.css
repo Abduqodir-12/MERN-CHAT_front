@@ -62,3 +62,33 @@
 .searchIcon:hover {
     transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+    .searchUser {
+        max-width: 90%;
+        padding: 10px 15px;
+    }
+
+    .searchInput {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .searchIcon {
+        width: 30px;
+        height: 30px;
+        top: 3px;
+        right: 3px;
+        padding: 3px;
+    }
+
+    .searchUser h1 {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+    .searchBox {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
