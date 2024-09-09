@@ -11,7 +11,7 @@ import './Users.css'
 const Users = ({ setMadal, searchTerm }) => {
     const serverUrl = process.env.REACT_APP_SERVER_URL;
     const [users, setUsers] = useState([])
-    const { currentUser, exit, onlineUsers, setUserInfo, setChats, chats, setCurrentChat } = useInfoContext()
+    const { currentUser, onlineUsers, setUserInfo, setChats, chats, setCurrentChat, chatsTrue, setMediaNone } = useInfoContext()
 
     // get all users
     useEffect(() => {
@@ -51,7 +51,7 @@ const Users = ({ setMadal, searchTerm }) => {
     )
 
     return (
-        <div className='usersList'>
+        <div className={chatsTrue ? 'SearchPageFalse' : 'SearchPageTrue'}>
             {
                 filteredUsers.map((user, index) => {
                     if (user._id !== currentUser._id) {
@@ -64,11 +64,11 @@ const Users = ({ setMadal, searchTerm }) => {
                                             setMadal('info')
                                         }} src={user.profilePicture ? `${serverUrl}/${user.profilePicture}` : userIcon} alt="profileImg" className='profileImg' />
                                         <div>
-                                            <h4 className='name'>{user?.firstname} {user?.lastname}</h4>
+                                            <h4 className='name'>{user?.firstname}</h4>
                                             <span className={online(user._id) ? 'status' : 'statusOff'}> {online(user._id) ? 'online' : 'offline'}</span>
                                         </div>
                                     </div>
-                                    <button onClick={() => findChat(user._id, currentUser._id)} className='msgBtn'><img width={30} src={MsgBtn} alt="msgBtn" /></button>
+                                    <button onClick={() => findChat(user._id, currentUser._id)} onClickCapture={() => setMediaNone(true)} className='msgBtn'><img width={30} src={MsgBtn} alt="msgBtn" /></button>
                                 </div>
                             </div>
                         )

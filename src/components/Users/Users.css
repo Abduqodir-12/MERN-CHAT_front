@@ -64,32 +64,33 @@
     padding: 5px 5px;
 }
 
-@media (max-width: 768px) {
-    .profileImg {
-        width: 40px;
-        height: 40px;
+@media(max-width: 830px) {
+    .status {
+        font-size: 14;
     }
-
-    .onlineDot, .userInfoBox {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-
-    .name {
-        font-size: 18px;
-    }
-
-    .msgBtn, .delBtn {
-        padding: 4px 8px;
-        font-size: 14px;
+    
+    .statusOff {
+        font-size: 14;
     }
 
     .delBtn {
         margin-left: 5px;
     }
+}
 
+@media(max-width: 690px) {
     .status {
-        font-size: 14px;
+        font-size: 12px;
     }
+
+    .statusOff {
+        font-size: 12px;
+    }
+    .delBtn {
+        padding: 1px 4px;
+    }
+}
+
+@media(max-width: 560px) {
+
 }

@@ -14,6 +14,8 @@ export const InfoProvider = ({children}) => {
   const [onlineUsers, setOnlineUsers] = useState([])
   const [userInfo, setUserInfo] = useState(null)
   const [newMessage, setNewMessage] = useState("")
+  const [chatsTrue, setChatsTrue ] = useState(false)
+  const [mediaNone, setMediaNone] = useState(false);
 
   const exit = () => {
     localStorage.clear()
@@ -28,7 +30,9 @@ export const InfoProvider = ({children}) => {
     onlineUsers, setOnlineUsers,
     userInfo, setUserInfo,
     currentChat, setCurrentChat,
-    newMessage, setNewMessage
+    newMessage, setNewMessage,
+    chatsTrue, setChatsTrue,
+    mediaNone, setMediaNone
   }
 
   return (

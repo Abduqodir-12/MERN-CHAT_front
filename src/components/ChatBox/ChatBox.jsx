@@ -12,7 +12,7 @@ import updateImg from '../../img/rightImg.png'
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
 const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
-  const { currentChat, currentUser, setUserInfo, newMessage, setNewMessage } = useInfoContext()
+  const { currentChat, currentUser, setUserInfo, setNewMessage, setMediaNone } = useInfoContext()
 
   const [userData, setUserData] = useState(null)
   const [messages, setMessages] = useState([])
@@ -125,14 +125,15 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
         setNewMessage(reader.result)
       };
       reader.readAsDataURL(file)
-    }
+    }    
   }
 
   return (
-    <div className='chatsBox'>
+    <div className="chatsBox">
       {
         currentChat ?
           <>
+          <h1 className="backBtn" onClick={() => setMediaNone(false)}>back</h1>
             <div onClick={() => {
               setMadal('info')
               setUserInfo(userData)

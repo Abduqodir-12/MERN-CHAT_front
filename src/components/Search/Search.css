@@ -4,6 +4,7 @@
     background-color: white;
     border-radius: 10px;
     max-width: 400px;
+    width: 100%;
     padding: 10px 20px;
 }
 
@@ -38,13 +39,7 @@
     width: 35px;
     height: 35px;
     cursor: pointer;
-}
-
-.searchUser h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 10px;
-    border-bottom: 1px solid black;
+    border: 0;
 }
 
 .logoApp {
@@ -63,32 +58,57 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .searchUser {
-        max-width: 90%;
-        padding: 10px 15px;
+.ChatPageFalse {
+    display: none;
+}
+.ChatPageTrue {
+    display: block;
+    padding-top: 10px;
+}
+
+.SearchPageFalse {
+    display: block;
+    padding-top: 20px;
+}
+.SearchPageTrue {
+    display: none;
+}
+
+@media(max-width: 830px) {
+    .searchBox {
+        justify-content: none;
+        gap: none;
     }
 
     .searchInput {
+        max-width: 300px;
         width: 100%;
-        padding: 8px;
     }
 
-    .searchIcon {
-        width: 30px;
-        height: 30px;
-        top: 3px;
-        right: 3px;
-        padding: 3px;
+    .searchUser {
+        max-width: 300px;
+        width: 100%;
+        padding: 6px 10px;
     }
 
-    .searchUser h1 {
-        font-size: 20px;
-        margin-top: 5px;
+    .name {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 690px) {
+    .searchUser {
+        max-width: 250px;
+        width: 100%;
     }
 
-    .searchBox {
-        flex-direction: column;
-        gap: 10px;
+    .name {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 560px) {
+    .searchUser {
+        width: 100%;
     }
 }

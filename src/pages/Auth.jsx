@@ -7,7 +7,6 @@ const Auth = () => {
   const { setCurrentUser } = useInfoContext();
   const [isSignup, setIsSignup] = useState(false)
   const [loading, setLoading ] = useState(false)
-  console.log(loading);
   
   
   const handleSubmit = async (e) => {

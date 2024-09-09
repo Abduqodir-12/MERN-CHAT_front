@@ -5,6 +5,7 @@ import ProfileImg from '../../img/userIcon.png'
 import { toast } from 'react-toastify'
 import { deleteUser, updateUser } from '../../api/userRequests'
 import delImg from '../../img/delete.233x256.png';
+import LogOut from '../../img/log out.png'
 
 import './Madal.css'
 const serverUrl = process.env.REACT_APP_SERVER_URL;
@@ -95,6 +96,7 @@ const Madal = ({ madal, setMadal }) => {
 
                 <button disabled={update} className="btnUpdate">{update ? "Updating..." : "Update"}</button>
                 <button className="btnDelete" onClick={handleDeleteAccount}><img width={20} src={delImg} alt='delImg'/></button>
+                <button className='btnExit' onClick={exit}><img width={20} src={LogOut} alt="logOut" /></button>
               </form>
             </>
         }
