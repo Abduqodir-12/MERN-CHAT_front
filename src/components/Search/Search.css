@@ -109,6 +109,11 @@
 
 @media(max-width: 560px) {
     .searchUser {
+        max-width: 500px;
         width: 100%;
+    }
+
+    .searchInput {
+        
     }
 }
