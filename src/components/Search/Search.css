@@ -113,7 +113,12 @@
         width: 100%;
     }
 
+    .searchInputBox {
+        max-width: 500px;
+        width: 100%;
+    }
+
     .searchInput {
-        
+        width: 100%;
     }
 }

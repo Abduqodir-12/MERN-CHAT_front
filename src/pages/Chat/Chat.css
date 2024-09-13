@@ -53,4 +53,8 @@
         max-width: 500px;
         width: 100%;
     }
+
+    .chatPage {
+        margin-top: 0;
+    }
 }

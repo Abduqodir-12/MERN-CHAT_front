@@ -51,7 +51,7 @@ const Chat = () => {
 
   return (
     <div className='chatPage'>
-        <div className="leftSide">
+        <div className={mediaNone ? 'dnone' : 'leftSide'}>
           {/* search and users list */}
           <Search setMadal={setMadal}/>
         </div>

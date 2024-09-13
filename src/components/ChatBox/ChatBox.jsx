@@ -9,6 +9,8 @@ import { addMessage, deleteMessage, getUserMessages, updateMessage } from '../..
 import { toast } from "react-toastify"
 import send from '../../img/sendImg.png'
 import updateImg from '../../img/rightImg.png'
+import delImg from '../../img/delete.233x256.png';
+import updateImgbtn from '../../img/update.png'
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
 const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
@@ -150,8 +152,8 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
                       {message.file && <img className="message-img" src={`${serverUrl}/${message.file}`} alt="messageImg" />}
                       <p className="textMessageRight">{message.text}</p>
                       <span className="messageTime">{format(message.createdAt)}</span>
-                      <button onClick={() => delMessage(message._id)}>Delete</button>
-                      <button onClick={() => startEditMessage(message)}>Update</button>
+                      <button className="chatBoxDelete" onClick={() => delMessage(message._id)}><img className='delBtnImg' src={delImg} alt='delImg'/></button>
+                      <button className="chatBoxUpdate" onClick={() => startEditMessage(message)}><img width={25} src={updateImgbtn} alt="updateImg" /></button>
                     </div>
                   )
                 } else {
