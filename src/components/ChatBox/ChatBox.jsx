@@ -90,13 +90,13 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
       createdAt: new Date().getTime()
     }
 
-    if (textMessage === "") return
-
     // const message = new FormData()
     // message.append('chatId', currentChat._id)
     // message.append('senderId', currentUser._id)
     // message.append('text', textMessage)
     // message.append('image', image)
+
+    if (textMessage === "") return
 
     setSendMessage({ ...message, receivedId: userId })
 
