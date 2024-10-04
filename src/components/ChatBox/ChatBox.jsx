@@ -83,13 +83,20 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
   }
 
   const handleSend = async () => {
+    const message = {
+      senderId: currentUser._id,
+      text: textMessage,
+      chatId: currentChat._id,
+      createdAt: new Date().getTime()
+    }
+
     if (textMessage === "") return
 
-    const message = new FormData()
-    message.append('chatId', currentChat._id)
-    message.append('senderId', currentUser._id)
-    message.append('text', textMessage)
-    message.append('image', image)
+    // const message = new FormData()
+    // message.append('chatId', currentChat._id)
+    // message.append('senderId', currentUser._id)
+    // message.append('text', textMessage)
+    // message.append('image', image)
 
     setSendMessage({ ...message, receivedId: userId })
 
@@ -149,7 +156,7 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
                 if (message.senderId === currentUser._id) {
                   return (
                     <div ref={scrollRef} key={index} className='right-message-item'>
-                      {message.file && <img className="message-img" src={`${serverUrl}/${message.file}`} alt="messageImg" />}
+                      {/* {message.file && <img className="message-img" src={`${serverUrl}/${message.file}`} alt="messageImg" />} */}
                       <p className="textMessageRight">{message.text}</p>
                       <span className="messageTime">{format(message.createdAt)}</span>
                       <button className="chatBoxDelete" onClick={() => delMessage(message._id)}><img className='delBtnImg' src={delImg} alt='delImg'/></button>
@@ -159,7 +166,7 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
                 } else {
                   return (
                     <div key={index} className='left-message-item'>
-                      {message.file && <img className="message-img" src={`${serverUrl}/${message.file}`} alt="messageImg" />}
+                      {/* {message.file && <img className="message-img" src={`${serverUrl}/${message.file}`} alt="messageImg" />} */}
                       <p className="textMessageLeft">{message.text}</p>
                       <span className="messageTime">{format(message.createdAt)}</span>
                     </div>
@@ -168,9 +175,9 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
               })}
             </div>
             <div className="chatSender">
-              <button onClick={() => {
+              {/* <button onClick={() => {
                 imgRef.current.click()
-              }} className="senderFileBtn">+</button>
+              }} className="senderFileBtn">+</button> */}
               <InputEmoji value={textMessage} onChange={handleText}/>
               <button onClick={editMessageId ? handleUpdateMessage : handleSend} className="sendBtn">
                 {editMessageId ? <img width={40} src={updateImg} alt='right_img' /> : <img width={40} src={send} alt="sendImg"/>}
