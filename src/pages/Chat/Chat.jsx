@@ -20,7 +20,7 @@ const Chat = () => {
     const getChats = async () => {
       try {
         const res = await getUserChats()
-        setChats(res.data.chats)
+        setChats(res?.data?.chats)
       } catch (error) {
         console.log(error);        
       }
