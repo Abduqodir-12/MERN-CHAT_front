@@ -137,3 +137,13 @@
     grid-column: span 2;
     padding: 8px 0;
   }
+
+  @media(max-width: 560px) {
+    .coverImg {
+      height: 100px;
+    }
+
+    .closeBtn {
+      z-index: 20;
+    }
+  }

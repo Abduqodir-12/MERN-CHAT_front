@@ -20,10 +20,10 @@ const Madal = ({ madal, setMadal }) => {
     try {
       setUpdate(true)
       const formData = new FormData(e.target)
-      const { data } = await updateUser(userInfo._id, formData)
-      setCurrentUser(data.user)
-      localStorage.setItem('account', JSON.stringify(data.user))
-      setUserInfo(data.user)
+      const { data } = await updateUser(userInfo._id, formData)      
+      setCurrentUser(data?.user)
+      localStorage.setItem('account', JSON.stringify(data?.user))
+      setUserInfo(data?.user)
       setUpdate(false)
     } catch (error) {
       toast.dismiss()

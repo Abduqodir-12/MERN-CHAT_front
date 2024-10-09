@@ -11,6 +11,7 @@ import send from '../../img/sendImg.png'
 import updateImg from '../../img/rightImg.png'
 import delImg from '../../img/delete.233x256.png';
 import updateImgbtn from '../../img/update.png'
+import backImg from '../../img/backImg.png'
 const serverUrl = process.env.REACT_APP_SERVER_URL;
 
 const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
@@ -142,12 +143,12 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
       {
         currentChat ?
           <>
-          <h1 className="backBtn" onClick={() => setMediaNone(false)}>back</h1>
-            <div onClick={() => {
-              setMadal('info')
-              setUserInfo(userData)
-            }} className="userInfo">
-              <img src={userData?.profilePicture ? `${serverUrl}/${userData?.profilePicture}` : UserIcon} alt="profile" className="profileImage" />
+            <div className="userInfo">
+              <h1 className="backBtn" onClick={() => setMediaNone(false)}><img width={50} src={backImg} alt="back" /></h1>
+              <img onClick={() => {
+                setMadal('info')
+                setUserInfo(userData)
+              }} src={userData?.profilePicture ? `${serverUrl}/${userData?.profilePicture}` : UserIcon} alt="profile" className="profileImage" />
               <h3 className="name">{userData?.firstname} {userData?.lastname}</h3>
             </div>
             <hr />
