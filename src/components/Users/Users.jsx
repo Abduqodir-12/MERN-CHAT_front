@@ -33,12 +33,12 @@ const Users = ({ setMadal, searchTerm }) => {
     const findChat = async (firstId, secondId) => {
         try {
             const { data } = await createChat(firstId, secondId)
-            if(!chats?.some(chat => chat._id === data?.chat._id)) {
+            if (!chats?.some(chat => chat._id === data?.chat._id)) {
                 setChats([...chats, data?.chat])
             }
             setCurrentChat(data?.chat)
         } catch (error) {
-            console.log(error);            
+            console.log(error);
         }
     }
 

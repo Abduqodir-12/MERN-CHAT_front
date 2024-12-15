@@ -112,6 +112,29 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
   }
 
   useEffect(() => {
+    const pushNotifications = async () => {
+      if (!currentChat || document.visibilityState === 'visible') return;
+
+      try {
+        const perm = await Notification.requestPermission();
+        if (perm !== 'granted') return;
+
+        const notification = new Notification(currentUser.firstname, {
+          body: "new",
+          icon: 'notif.png',
+        });
+
+        setTimeout(() => notification.close(), 5000); 
+      } catch (error) {
+        console.log('Notification Error:', error);
+      }
+    };
+
+    pushNotifications();
+  }, [currentChat]); 
+
+
+  useEffect(() => {
     if (currentChat && answerMessage !== null && answerMessage.chatId === currentChat._id) {
       setMessages([...messages, answerMessage])
     }
@@ -129,13 +152,13 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
   const handleSendImage = (e) => {
     const file = e.target.files[0]
     setImage(file)
-    if(file) {
+    if (file) {
       const reader = new FileReader()
       reader.onloadend = () => {
         setNewMessage(reader.result)
       };
       reader.readAsDataURL(file)
-    }    
+    }
   }
 
   return (
@@ -160,7 +183,7 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
                       {/* {message.file && <img className="message-img" src={`${serverUrl}/${message.file}`} alt="messageImg" />} */}
                       <p className="textMessageRight">{message.text}</p>
                       <span className="messageTime">{format(message.createdAt)}</span>
-                      <button className="chatBoxDelete" onClick={() => delMessage(message._id)}><img className='delBtnImg' src={delImg} alt='delImg'/></button>
+                      <button className="chatBoxDelete" onClick={() => delMessage(message._id)}><img className='delBtnImg' src={delImg} alt='delImg' /></button>
                       <button className="chatBoxUpdate" onClick={() => startEditMessage(message)}><img width={25} src={updateImgbtn} alt="updateImg" /></button>
                     </div>
                   )
@@ -179,11 +202,11 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
               {/* <button onClick={() => {
                 imgRef.current.click()
               }} className="senderFileBtn">+</button> */}
-              <InputEmoji value={textMessage} onChange={handleText}/>
+              <InputEmoji value={textMessage} onChange={handleText} />
               <button onClick={editMessageId ? handleUpdateMessage : handleSend} className="sendBtn">
-                {editMessageId ? <img width={40} src={updateImg} alt='right_img' /> : <img width={40} src={send} alt="sendImg"/>}
+                {editMessageId ? <img width={40} src={updateImg} alt='right_img' /> : <img width={40} src={send} alt="sendImg" />}
               </button>
-              <input onChange={handleSendImage}  ref={imgRef} type="file" name="image" className="messageFileInput" />
+              <input onChange={handleSendImage} ref={imgRef} type="file" name="image" className="messageFileInput" />
             </div>
           </>
           :

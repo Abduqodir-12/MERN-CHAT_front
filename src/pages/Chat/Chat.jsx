@@ -11,7 +11,7 @@ const serverUrl = process.env.REACT_APP_SERVER_URL;
 const socket = io(serverUrl)
 
 const Chat = () => {
-  const {currentUser, setChats, setOnlineUsers, mediaNone} = useInfoContext()
+  const { currentUser, setChats, setOnlineUsers, mediaNone } = useInfoContext()
   const [madal, setMadal] = useState(false)
   const [sendMessage, setSendMessage] = useState(null)
   const [answerMessage, setAnswerMessage] = useState(null)
@@ -22,7 +22,7 @@ const Chat = () => {
         const res = await getUserChats()
         setChats(res?.data?.chats)
       } catch (error) {
-        console.log(error);        
+        console.log(error);
       }
     }
     getChats()
@@ -38,7 +38,7 @@ const Chat = () => {
 
   // send message to socket server
   useEffect(() => {
-    if(sendMessage !== null) {
+    if (sendMessage !== null) {
       socket.emit('sendMessage', sendMessage)
     }
   }, [sendMessage])
@@ -51,16 +51,16 @@ const Chat = () => {
 
   return (
     <div className='chatPage'>
-        <div className={mediaNone ? 'dnone' : 'leftSide'}>
-          {/* search and users list */}
-          <Search setMadal={setMadal}/>
-        </div>
+      <div className={mediaNone ? 'dnone' : 'leftSide'}>
+        {/* search and users list */}
+        <Search setMadal={setMadal} />
+      </div>
 
-        <div className={mediaNone ? 'middleSide' : 'dnone'}>
-          {/* conversation */}
-          <ChatBox setMadal={setMadal} setSendMessage={setSendMessage} answerMessage={answerMessage}/>
-        </div>
-          {madal && <Madal madal={madal} setMadal={setMadal}/>}
+      <div className={mediaNone ? 'middleSide' : 'dnone'}>
+        {/* conversation */}
+        <ChatBox setMadal={setMadal} setSendMessage={setSendMessage} answerMessage={answerMessage} />
+      </div>
+      {madal && <Madal madal={madal} setMadal={setMadal} />}
     </div>
   )
 }
