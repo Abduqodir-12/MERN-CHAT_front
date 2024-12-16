@@ -114,13 +114,13 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
   useEffect(() => {
     const pushNotifications = async () => {
       if (!currentChat || document.visibilityState === 'visible') return;
-
+      
       try {
         const perm = await Notification.requestPermission();
         if (perm !== 'granted') return;
 
         const notification = new Notification(currentUser.firstname, {
-          body: "new",
+          body: answerMessage.text,
           icon: 'notif.png',
         });
 
@@ -131,7 +131,7 @@ const ChatBox = ({ setMadal, setSendMessage, answerMessage }) => {
     };
 
     pushNotifications();
-  }, [currentChat]); 
+  }, [currentChat, answerMessage]); 
 
 
   useEffect(() => {
