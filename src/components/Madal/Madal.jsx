@@ -20,7 +20,7 @@ const Madal = ({ madal, setMadal }) => {
     try {
       setUpdate(true)
       const formData = new FormData(e.target)
-      const { data } = await updateUser(userInfo._id, formData)      
+      const { data } = await updateUser(userInfo._id, formData)
       setCurrentUser(data?.user)
       localStorage.setItem('account', JSON.stringify(data?.user))
       setUserInfo(data?.user)
@@ -35,7 +35,7 @@ const Madal = ({ madal, setMadal }) => {
   const handleDeleteAccount = async () => {
     let confirm = window.confirm('Rostanham ochirmohchimsz ?')
     try {
-      if(confirm) {
+      if (confirm) {
         await deleteUser(userInfo._id)
         toast.success("Account deleted successfully")
         localStorage.removeItem('account')
@@ -95,7 +95,7 @@ const Madal = ({ madal, setMadal }) => {
                 </div>
 
                 <button disabled={update} className="btnUpdate">{update ? "Updating..." : "Update"}</button>
-                <button className="btnDelete" onClick={handleDeleteAccount}><img width={20} src={delImg} alt='delImg'/></button>
+                <button className="btnDelete" onClick={handleDeleteAccount}><img width={20} src={delImg} alt='delImg' /></button>
                 <button className='btnExit' onClick={exit}><img width={20} src={LogOut} alt="logOut" /></button>
               </form>
             </>
